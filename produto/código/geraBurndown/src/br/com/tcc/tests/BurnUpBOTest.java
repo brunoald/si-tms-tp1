@@ -10,7 +10,7 @@ import br.com.tcc.model.BurnUp;
 public class BurnUpBOTest {
 
 	@Test
-	public void test() {
+	public void testBurnUpAttribute() {
 		BurnUpBO burnUpBO = new BurnUpBO();
 		BurnUp burnUp = new BurnUp();
 		burnUpBO.setBurnUp(burnUp);
