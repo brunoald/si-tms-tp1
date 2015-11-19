@@ -1,5 +1,7 @@
 package br.com.tcc.bo;
 
+import org.jfree.chart.JFreeChart;
+
 import br.com.tcc.model.BurnUp;
 
 public class BurnUpBO {
@@ -12,6 +14,10 @@ public class BurnUpBO {
 
 	public BurnUp getBurnUp() {
 		return this.burnUp;
+	}
+
+	public JFreeChart getChart() {
+		return null;
 	}
 
 }
