@@ -16,8 +16,8 @@ public class BurnUp {
 		return this.sprint;
 	}
 
-	public void setScope(int i, int j) {
-		scope.put(i, j);
+	public void setScope(int iteration, int amount) {
+		scope.put(iteration, amount);
 	}
 
 	public int[] getScopeList(int i) {

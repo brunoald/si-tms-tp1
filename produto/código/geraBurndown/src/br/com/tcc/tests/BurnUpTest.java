@@ -25,7 +25,7 @@ public class BurnUpTest {
 	}
 	
 	@Test
-	public void testScopeProjection() {
+	public void testScopeList() {
 		burnup.setScope(0, 100);
 		burnup.setScope(4, 120);
 		burnup.setScope(8, 80);
