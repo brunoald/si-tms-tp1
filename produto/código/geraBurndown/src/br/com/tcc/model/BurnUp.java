@@ -2,6 +2,8 @@ package br.com.tcc.model;
 
 import java.util.Hashtable;
 
+import br.com.tcc.util.DataUtil;
+
 public class BurnUp {
 	
 	Sprint sprint;
@@ -34,6 +36,24 @@ public class BurnUp {
 	}
 
 	public double[] getWorkList() {
-		return null;
+		Hashtable<String, Double> workTimeByDay = new Hashtable<String, Double>();
+		for (ItemHistorico item : sprint.getItensHistorico()) {
+			workTimeByDay.put(DataUtil.dateToString(item.getData()), 0.0);
+		}
+		for (ItemHistorico item : sprint.getItensHistorico()) {
+			double currentValue = workTimeByDay.get(DataUtil.dateToString(item.getData())); 
+			workTimeByDay.put(DataUtil.dateToString(item.getData()), currentValue + item.getTempoGasto());
+		}
+		int size = sprint.getItensHistorico().size();
+		double[] result = new double[size];
+		int i = 0;
+		int soma = 0;
+		for (ItemHistorico item : sprint.getItensHistorico()) {
+			double value = workTimeByDay.get(DataUtil.dateToString(item.getData()));
+			soma+= value;
+			result[i] = soma;
+			i++;	
+		}
+		return result;
 	}
 }
