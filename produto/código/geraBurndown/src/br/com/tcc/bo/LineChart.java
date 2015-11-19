@@ -15,6 +15,12 @@ import br.com.tcc.util.DataUtil;
 public class LineChart extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	
+	public LineChart(JFreeChart chart) {
+		ChartPanel chartPanel = new ChartPanel(chart);
+	    chartPanel.setPreferredSize(new java.awt.Dimension(800, 370));
+	    setContentPane(chartPanel);
+	}
 
 	public LineChart(String applicationTitle, String chartTitle, Map<Date,Double> grafico, Double totalHoras, Double queimaDiariaIdeal) {
 		

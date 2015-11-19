@@ -33,5 +33,11 @@ public class BurnUpBO {
 		JFreeChart chart = ChartFactory.createLineChart("Gráfico BurnUp", null, null, ds);
 		return chart;
 	}
+	
+	public void render() {
+		LineChart demo = new LineChart(getChart());
+		demo.pack();
+		demo.setVisible(true);
+	}
 
 }

@@ -4,11 +4,14 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.tcc.bo.BurnUpBO;
 import br.com.tcc.bo.BurndownBO;
 import br.com.tcc.bo.SprintBO;
+import br.com.tcc.model.BurnUp;
 import br.com.tcc.model.Estoria;
 import br.com.tcc.model.ItemHistorico;
 import br.com.tcc.model.Sprint;
+import br.com.tcc.tests.SprintsFixture;
 
 public class Main {
 
@@ -17,11 +20,14 @@ public class Main {
 	private static SprintBO sprintBO = new SprintBO();
 	
 	public static void main(String[] args) throws ParseException {
-		Sprint sprint = criaSprint();
-		
-		BurndownBO burndown = new BurndownBO();
-		burndown.gerarBurndownHoras(sprint);
-		burndown.gerarBurndownPontos(sprint);
+		Sprint sprint = SprintsFixture.busySprint();
+		BurnUpBO burnUpBO = new BurnUpBO();
+		BurnUp burnUp = new BurnUp();
+		burnUp.setScope(0, 80);
+		burnUp.setScope(4, 100);
+		burnUp.setSprint(sprint);
+		burnUpBO.setBurnUp(burnUp);
+		burnUpBO.render();
 	}
 	
 
