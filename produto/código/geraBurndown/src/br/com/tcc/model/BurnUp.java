@@ -21,7 +21,8 @@ public class BurnUp {
 		scope.put(iteration, amount);
 	}
 
-	public int[] getScopeList(int i) {
+	public int[] getScopeList() {
+		int i = this.sprint.getItensHistorico().size();
 		int[] list = new int[i];
 		for (int j = 0; j < i; j++) {
 			try {

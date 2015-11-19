@@ -26,12 +26,13 @@ public class BurnUpTest {
 	}
 	
 	@Test
-	public void testScopeList() {
+	public void testScopeList() throws ParseException {
+		Sprint sprint = SprintsFixture.busySprint();
+		burnup.setSprint(sprint);
 		burnup.setScope(0, 100);
 		burnup.setScope(4, 120);
-		burnup.setScope(8, 80);
-		int[] scope = new int[] {100,100,100,100,120,120,120,120,80,80};
-		assertArrayEquals(burnup.getScopeList(10), scope);
+		int[] scope = new int[] {100,100,100,100,120,120,120,120};
+		assertArrayEquals(burnup.getScopeList(), scope);
 	}
 	
 	@Test
