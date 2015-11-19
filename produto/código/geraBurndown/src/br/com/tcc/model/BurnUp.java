@@ -32,4 +32,8 @@ public class BurnUp {
 		}
 		return list;
 	}
+
+	public double[] getWorkList() {
+		return null;
+	}
 }
