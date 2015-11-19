@@ -1,6 +1,12 @@
 package br.com.tcc.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Set;
 
 import br.com.tcc.util.DataUtil;
 
@@ -55,6 +61,17 @@ public class BurnUp {
 	}
 
 	public String[] getDates() {
-		return null;
+		ArrayList<String> al = new ArrayList<String>();
+		for (ItemHistorico item : sprint.getItensHistorico()) {
+			String date = DataUtil.dateToString(item.getData());
+			al.add(date);
+		}
+		Set<String> hs = new HashSet<String>();
+		hs.addAll(al);
+		al.clear();
+		al.addAll(hs);
+		Collections.sort(al);
+		String[] stringArray = al.toArray(new String[al.size()]);
+		return stringArray;
 	}
 }
