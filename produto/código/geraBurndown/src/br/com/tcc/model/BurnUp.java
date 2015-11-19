@@ -34,7 +34,7 @@ public class BurnUp {
 		return list;
 	}
 
-	public double[] getWorkList() {
+	public double[] getWorkListHours() {
 		Hashtable<String, Double> workTimeByDay = new Hashtable<String, Double>();
 		int i = 0, soma = 0;
 		int size = sprint.getItensHistorico().size();
