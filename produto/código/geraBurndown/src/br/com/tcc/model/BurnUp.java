@@ -53,4 +53,8 @@ public class BurnUp {
 		}
 		return result;
 	}
+
+	public String[] getDates() {
+		return null;
+	}
 }
