@@ -8,7 +8,7 @@ public class BurnUp {
 		this.sprint = sprint;
 	}
 
-	public Object getSprint() {
+	public Sprint getSprint() {
 		return this.sprint;
 	}
 }
