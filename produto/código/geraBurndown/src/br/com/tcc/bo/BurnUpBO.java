@@ -19,7 +19,19 @@ public class BurnUpBO {
 	}
 
 	public JFreeChart getChart() {
-		return null;
+		DefaultCategoryDataset ds = new DefaultCategoryDataset();
+		
+		double[] completed = getBurnUp().getWorkListHours();
+		int[] scope = getBurnUp().getScopeList();
+		String[] dates = getBurnUp().getDates();
+		
+		for (int i = 0; i < scope.length; i++) {
+			ds.addValue(scope[i], "Total", dates[i]);
+			ds.addValue(completed[i], "Completado", dates[i]);
+		}
+		
+		JFreeChart chart = ChartFactory.createLineChart("Gráfico BurnUp", null, null, ds);
+		return chart;
 	}
 
 }
