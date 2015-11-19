@@ -11,4 +11,11 @@ public class BurnUp {
 	public Sprint getSprint() {
 		return this.sprint;
 	}
+
+	public void setScope(int i, int j) {
+	}
+
+	public int[] getScopeList(int i) {
+		return null;
+	}
 }

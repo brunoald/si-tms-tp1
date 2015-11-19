@@ -23,4 +23,13 @@ public class BurnUpTest {
 		burnup.setSprint(sprint);
 		assertEquals(burnup.getSprint(), sprint);
 	}
+	
+	@Test
+	public void testScopeProjection() {
+		burnup.setScope(0, 100);
+		burnup.setScope(4, 120);
+		burnup.setScope(8, 80);
+		int[] scope = new int[] {100,100,100,100,120,120,120,120,80,80};
+		assertArrayEquals(burnup.getScopeList(10), scope);
+	}
 }
